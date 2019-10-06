@@ -14,6 +14,7 @@ class CustomChart extends BaseComponent {
     renderContainer(data) {
         return (
             <div style={{ width: '100%', height: 300 }}>
+                <h1>{this.props.titulo}</h1>
                 <ResponsiveContainer>
                 {this.renderChart(data)}
                 </ResponsiveContainer>

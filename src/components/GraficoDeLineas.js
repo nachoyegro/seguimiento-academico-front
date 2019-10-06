@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import CustomChart from './CustomChart.js';
 
-class IndiceAprobadosChart extends CustomChart {
+class GraficoDeLineas extends CustomChart {
 
     renderChart(data){
       return <LineChart data={data}>
@@ -15,4 +15,4 @@ class IndiceAprobadosChart extends CustomChart {
     }
 }
 
-export default IndiceAprobadosChart;
+export default GraficoDeLineas;
