@@ -1,9 +1,8 @@
-version: '3.5'
+version: '3'
 
 services:
-
-  sample-app:
-    container_name: sample-app
+  alumnos-front:
+    container_name: alumnos-front
     build:
       context: .
       dockerfile: Dockerfile
