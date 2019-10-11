@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Alumno from './components/Alumno.js';
-import GraficoDeLineas from './components/GraficoDeLineas.js';
+import Router from './utils/Router';
 
-render(<GraficoDeLineas titulo={'Indice de aprobación'} url={process.env.REACT_APP_INDICE_APROBACION_URL}/>, document.querySelector('#root'));
+render(<Router/>, document.querySelector('#root'));
