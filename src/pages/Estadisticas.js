@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import GraficoDeLineas from '../components/GraficoDeLineas';
+import GraficoDeBarras from '../components/GraficoDeBarras';
 
 class Estadisticas extends Component {
     render() {
-        return <GraficoDeLineas titulo={'Indice de aprobación'} url={process.env.REACT_APP_INDICE_APROBACION_URL}/>
+        return <GraficoDeBarras titulo={'Estadisticas basicas de materia X'} url={process.env.REACT_APP_ESTADISTICAS_BASICAS_URL}/>
 
     }
 }
