@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import CustomChart from './CustomChart.js';
 
