@@ -6,7 +6,7 @@ import Login from '../pages/Login';
 const Router = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/" component={Estadisticas}/>
+            <Route exact path="/estadisticas" component={Estadisticas}/>
             <Route exact path="/login" component={Login}/>
         </Switch>
     </BrowserRouter>

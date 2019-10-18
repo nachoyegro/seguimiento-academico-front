@@ -19,7 +19,10 @@ class Login extends Component {
         data: qs.stringify(data),
         url,
       };
-      axios(options).then( res => localStorage.setItem('jwt', res.data.access)).catch( error => console.log(error.response));
+      axios(options).then( res => {
+            localStorage.setItem('jwt', res.data.access);
+            this.props.history.push('/estadisticas');
+            }).catch( error => console.log(error.response));
   }
 
   render() {
