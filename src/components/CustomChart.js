@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ResponsiveContainer } from 'recharts';
 import BaseComponent from './BaseComponent.js'
 
 class CustomChart extends BaseComponent {
     
-    constructor(props){
-        super(props);
-        this.state = {
-            data: []
-        }
+    state = {
+        data: []
     }
 
     renderContainer(data) {

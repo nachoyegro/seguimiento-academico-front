@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { AxiosProvider, Request, Get, Delete, Head, Post, Put, Patch, withAxios } from 'react-axios';
+import React from 'react';
+import { Get } from 'react-axios';
+import AuthenticatedComponent from './AuthenticatedComponent'
 
-class BaseComponent extends Component {
+class BaseComponent extends AuthenticatedComponent {
 
-
-    render() {
+    renderComponent() {
         return (
             <div>
                 <Get url={this.props.url} params={this.props.params}>
