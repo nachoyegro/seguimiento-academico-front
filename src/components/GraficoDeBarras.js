@@ -1,11 +1,11 @@
 import React from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,} from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
 import CustomChart from './CustomChart.js';
 
 class GraficoDeBarras extends CustomChart {
 
-    renderChart(data){
-      return <BarChart data={data}>
+  renderChart(data) {
+    return <BarChart data={data}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="Materia" />
       <YAxis />
@@ -16,7 +16,7 @@ class GraficoDeBarras extends CustomChart {
       <Bar dataKey="Desaprobados" fill="#ff7675" />
       <Bar dataKey="Faltantes" fill="#ffc658" />
     </BarChart>
-    }
+  }
 }
-  
+
 export default GraficoDeBarras;
