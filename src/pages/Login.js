@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import qs from 'qs';
+import BaseContainer from '../containers/BaseContainer';
+import TextField from '@material-ui/core/TextField';
+import FormControl from '@material-ui/core/FormControl';
+import Button from '@material-ui/core/Button';
 
 class Login extends Component {
 
@@ -27,26 +31,28 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.submit(e)}>
-        <fieldset>
+      <BaseContainer>
+        <form onSubmit={e => this.submit(e)}>
           <legend>Login</legend>
-          <p>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text" id="username"
+          <FormControl fullWidth>
+            <TextField id="username" label="Usuario"
+              variant="outlined"
               onChange={e => this.setState({ username: e.target.value })} />
-          </p>
-          <p>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password" id="password"
+          </FormControl>
+          <FormControl fullWidth>
+            <TextField id="password" label="Contraseña" type="password"
+              variant="outlined"
               onChange={e => this.setState({ password: e.target.value })} />
-          </p>
-          <p>
-            <button type="submit">Login</button>
-          </p>
-        </fieldset>
-      </form>
+          </FormControl>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary">
+            Ingresar
+          </Button>
+        </form>
+      </BaseContainer >
     )
   }
 }

@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import GraficoDeLineas from '../components/GraficoDeLineas';
 import GraficoDeBarras from '../components/GraficoDeBarras';
+import BasePage from './BasePage';
 
-class Estadisticas extends Component {
+class Estadisticas extends BasePage {
 
     state = {
         carrera: 'W',
@@ -10,10 +11,10 @@ class Estadisticas extends Component {
         alumno: '',
     }
 
-    render() {
-        return <div>
+    renderPage() {
+        return (
             <GraficoDeBarras titulo={'Estadisticas basicas de materia X'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/materias/${this.state.materia}/basicos`} />
-        </div>
+        )
     }
 }
 
