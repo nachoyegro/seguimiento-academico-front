@@ -2,17 +2,17 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Estadisticas from '../pages/Estadisticas';
 import Login from '../pages/Login';
-import AuthenticationRequired from '../components/AuthenticationRequired';
+import Logout from '../pages/Logout';
 import BaseContainer from '../containers/BaseContainer'
+import { ProtectedRoute } from './ProtectedRoute';
 
 const Router = () => (
     <BrowserRouter>
         <Switch>
           <BaseContainer>
             <Route exact path="/login" component={Login}/>
-            <AuthenticationRequired>
-                <Route exact path="/estadisticas" component={Estadisticas}/>
-            </AuthenticationRequired>
+            <ProtectedRoute exact path="/estadisticas" component={Estadisticas}/>
+            <ProtectedRoute exact path="/logout" component={Logout}/>
           </BaseContainer>
         </Switch>
     </BrowserRouter>
