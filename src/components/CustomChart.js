@@ -3,7 +3,7 @@ import { ResponsiveContainer } from 'recharts';
 import BaseComponent from './BaseComponent.js'
 
 class CustomChart extends BaseComponent {
-    
+
     state = {
         data: []
     }
@@ -13,7 +13,7 @@ class CustomChart extends BaseComponent {
             <div style={{ width: '100%', height: 300 }}>
                 <h1>{this.props.titulo}</h1>
                 <ResponsiveContainer>
-                {this.renderChart(data)}
+                    {this.renderChart(data)}
                 </ResponsiveContainer>
             </div>
         )

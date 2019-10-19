@@ -1,10 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class Logout extends Component {
 
   logout = e => {
-      localStorage.removeItem('jwt');
-      this.props.history.push('/login');
+    localStorage.removeItem('jwt');
+    this.props.history.push('/login');
   }
 
   cancel = e => {
@@ -13,13 +13,13 @@ class Logout extends Component {
 
   render() {
     return (
-        <fieldset>
-          <legend>¿Está seguro que desea salir?</legend>
-          <p>
-            <button onClick={ e => this.logout(e) }>Si</button>
-            <button onClick={ e => this.cancel(e) }>No</button>
-          </p>
-        </fieldset>
+      <fieldset>
+        <legend>¿Está seguro que desea salir?</legend>
+        <p>
+          <button onClick={e => this.logout(e)}>Si</button>
+          <button onClick={e => this.cancel(e)}>No</button>
+        </p>
+      </fieldset>
     )
   }
 }
