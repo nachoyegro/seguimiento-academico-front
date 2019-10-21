@@ -2,7 +2,7 @@ version: '3'
 
 services:
   alumnos-front:
-    container_name: alumnos-front
+    container_name: seguimiento-academico-front
     build:
       context: .
       dockerfile: Dockerfile
