@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Grid from '@material-ui/core/Grid';
-import NavBar from '../components/NavBar';
 
 class BaseContainer extends Component {
     render() {

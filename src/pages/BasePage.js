@@ -6,7 +6,7 @@ class BasePage extends Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar>
+                <NavBar />
                 <BaseContainer>
                     {this.renderPage()}
                 </BaseContainer>
