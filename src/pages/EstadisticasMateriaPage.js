@@ -61,7 +61,7 @@ class EstadisticasMateriaPage extends BasePage {
                         Calcular Estadisticas
                     </Button>
                 </form>
-                <GraficoDeBarras titulo={'Estadisticas basicas de materia X'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/P/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+                <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/P/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
             </div>
         )
     }
