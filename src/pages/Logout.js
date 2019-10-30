@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import BaseContainer from '../containers/BaseContainer';
+
 
 class Logout extends Component {
 
@@ -13,13 +15,15 @@ class Logout extends Component {
 
   render() {
     return (
-      <fieldset>
-        <legend>¿Está seguro que desea salir?</legend>
-        <p>
-          <button onClick={e => this.logout(e)}>Si</button>
-          <button onClick={e => this.cancel(e)}>No</button>
-        </p>
-      </fieldset>
+      <BaseContainer>
+        <fieldset>
+          <legend>¿Está seguro que desea salir?</legend>
+          <p>
+            <button onClick={e => this.logout(e)}>Si</button>
+            <button onClick={e => this.cancel(e)}>No</button>
+          </p>
+        </fieldset>
+      </BaseContainer>
     )
   }
 }

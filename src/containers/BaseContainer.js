@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
-import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 class BaseContainer extends Component {
     render() {
-        return (<Container>{this.props.children}</Container>);
+        return (
+            <div>
+                <Grid
+                    container
+                    direction="row"
+                    justify="center"
+                    alignItems="center">
+                    {this.props.children}
+                </Grid>
+            </div>);
     }
 }
 

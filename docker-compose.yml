@@ -2,7 +2,7 @@ version: '3'
 
 services:
   alumnos-front:
-    container_name: alumnos-front
+    container_name: seguimiento-academico-front
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,3 +13,8 @@ services:
       - '3000:3000'
     environment:
       - NODE_ENV=development
+
+networks:
+  default:
+    external:
+      name: alumnos

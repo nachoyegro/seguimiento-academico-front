@@ -2,5 +2,5 @@ import { getJWT } from './jwt';
 
 export const isAuthenticated = () => {
     const jwt = getJWT();
-    return jwt !== undefined;
+    return jwt !== null & jwt !== undefined;
 }
