@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import EstadisticasMateriaPage from '../pages/EstadisticasMateriaPage';
+import EstadisticasAlumnoPage from '../pages/EstadisticasAlumnoPage';
 import Login from '../pages/Login';
 import Logout from '../pages/Logout';
 import HomePage from '../pages/HomePage';
@@ -11,7 +12,8 @@ const Router = () => (
     <Switch>
       <Route exact path="/login" component={Login} />
       <ProtectedRoute exact path="/" component={HomePage} />
-      <ProtectedRoute exact path="/estadisticas" component={EstadisticasMateriaPage} />
+      <ProtectedRoute exact path="/estadisticas-materia" component={EstadisticasMateriaPage} />
+      <ProtectedRoute exact path="/estadisticas-alumno" component={EstadisticasAlumnoPage} />
       <ProtectedRoute exact path="/logout" component={Logout} />
     </Switch>
   </BrowserRouter>
