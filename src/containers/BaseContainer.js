@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 class BaseContainer extends Component {
     render() {
         return (
-            <div>
+            <div className="container">
                 <Grid
                     container
                     direction="row"
