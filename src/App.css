@@ -154,11 +154,37 @@
 .bienvenido {
   font-size: 3rem !important;
   text-align: center;
+}
+
+.espaciado-arriba {
   margin-top: 3rem;
+}
+
+.espaciado-abajo {
+  margin-bottom: 3rem;
 }
 
 .bienvenido-descripcion {
   font-size: 1.8rem !important;
   text-align: center;
-  margin-bottom: 3rem;
+}
+
+.form-estadisticas {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 24px 45px;
+  margin-top: 0;
+  position: relative;
+  text-align: center;
+  transition: all .5s ease-out;
+}
+
+.form-estadisticas-input {
+  margin-bottom: 10px !important;
+}
+
+.chart {
+  width: '100%';
+  height: 300px;
+  margin-bottom: 2rem;
 }

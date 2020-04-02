@@ -7,6 +7,11 @@ import Estadisticas from './Estadisticas';
 
 class EstadisticasMateriaPage extends Estadisticas {
 
+    constructor(props) {
+        super(props);
+        this.titulo = 'Análisis por materia'
+    }
+
 
     state = {
         carreras: '',
@@ -25,7 +30,7 @@ class EstadisticasMateriaPage extends Estadisticas {
     renderForm = () => {
         return (
             <form onSubmit={e => this.submit(e)}>
-                <FormControl fullWidth>
+                <FormControl className="form-estadisticas-input" fullWidth>
                     <TextField id="carreras"
                         label="Carreras"
                         variant="outlined"
@@ -34,7 +39,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                             shrink: true,
                         }} />
                 </FormControl>
-                <FormControl fullWidth>
+                <FormControl className="form-estadisticas-input" fullWidth>
                     <TextField id="materia"
                         label="Materia"
                         variant="outlined"
@@ -43,7 +48,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                             shrink: true,
                         }} />
                 </FormControl>
-                <FormControl fullWidth>
+                <FormControl className="form-estadisticas-input" fullWidth>
                     <TextField id="fecha_inicio"
                         label="Fecha Inicio"
                         type="date"
@@ -52,7 +57,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                             shrink: true,
                         }} />
                 </FormControl>
-                <FormControl fullWidth>
+                <FormControl className="form-estadisticas-input" fullWidth>
                     <TextField id="fecha_fin"
                         label="Fecha Fin"
                         type="date"

@@ -7,6 +7,11 @@ import Button from '@material-ui/core/Button';
 
 class EstadisticasCarreraPage extends Estadisticas {
 
+  constructor(props) {
+    super(props);
+    this.titulo = 'Análisis por carrera'
+  }
+
 
   state = {
     carrera: '',
@@ -22,7 +27,7 @@ class EstadisticasCarreraPage extends Estadisticas {
   renderForm = () => {
     return (
       <form onSubmit={e => this.submit(e)}>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="carrera"
             label="Carrera"
             variant="outlined"

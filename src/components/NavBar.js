@@ -37,7 +37,7 @@ class NavBar extends Component {
                             container
                             spacing={24}>
                             <Grid item>
-                                <h1>Estadísticas</h1>
+                                <h1>Visualización de datos</h1>
                             </Grid>
                             <Grid item>
                                 <div>

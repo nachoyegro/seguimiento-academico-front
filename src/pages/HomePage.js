@@ -31,14 +31,14 @@ class HomePage extends BasePage {
         const { classes, nombre } = this.props;
         return (
             <div>
-                <h1 className="bienvenido">Bienvenido al módulo de estadísticas de seguimiento académico</h1>
-                <p className="bienvenido-descripcion">Seleccione el tipo de estadística que desea visualizar</p>
+                <p className="bienvenido espaciado-arriba">Bienvenido al módulo de estadísticas de seguimiento académico</p>
+                <p className="bienvenido-descripcion espaciado-abajo">Seleccione el tipo de análisis que desea visualizar</p>
                 <div className="columns is-gapless">
                     <div className="column">
                         <Link to="/estadisticas-carrera" style={{ textDecoration: 'none', color: 'inherit' }}>
                             <div className="service-box">
                                 <GrainIcon style={{ fontSize: 100, color: pink[500] }}></GrainIcon>
-                                <h2 className="titulo-recuadro">Estadísticas por Carrera</h2>
+                                <h2 className="titulo-recuadro">Análisis por Carrera</h2>
                                 <p className="texto-recuadro">Se puede ver el crecimiento anual de inscriptos, qué materias son traba, estado de la carrera, etc.</p>
                             </div>
                         </Link>
@@ -47,8 +47,8 @@ class HomePage extends BasePage {
                         <Link to="/estadisticas-materia" style={{ textDecoration: 'none', color: 'inherit' }}>
                             <div className="service-box">
                                 <GroupIcon style={{ fontSize: 100, color: pink[500] }}></GroupIcon>
-                                <h2 className="titulo-recuadro">Estadísticas por Materia</h2>
-                                <p className="texto-recuadro">Se puede ver la cantidad de aprobados/desaprobados/ausentes, cantidad de recursantes, detalle de aprobados, etc</p>
+                                <h2 className="titulo-recuadro">Análisis por Materia</h2>
+                                <p className="texto-recuadro">Cantidad de aprobados/desaprobados/ausentes, recursantes, detalle de aprobados, etc</p>
                             </div>
                         </Link>
                     </div>
@@ -56,7 +56,7 @@ class HomePage extends BasePage {
                         <Link to="/estadisticas-alumno" style={{ textDecoration: 'none', color: 'inherit' }}>
                             <div className="service-box">
                                 <PersonIcon style={{ fontSize: 100, color: pink[500] }}></PersonIcon>
-                                <h2 className="titulo-recuadro">Estadísticas por Alumno</h2>
+                                <h2 className="titulo-recuadro">Análisis por Alumno</h2>
                                 <p className="texto-recuadro">Se puede ver el porcentaje de aprobación por áreas, por núcleos, cantidad de créditos, etc</p>
                             </div>
                         </Link>

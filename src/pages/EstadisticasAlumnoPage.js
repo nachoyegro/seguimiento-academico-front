@@ -8,6 +8,10 @@ import Button from '@material-ui/core/Button';
 
 class EstadisticasAlumnoPage extends Estadisticas {
 
+  constructor(props) {
+    super(props);
+    this.titulo = 'Análisis por alumno'
+  }
 
   state = {
     carrera: '',
@@ -27,7 +31,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
   renderForm = () => {
     return (
       <form onSubmit={e => this.submit(e)}>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="carrera"
             label="Carrera"
             variant="outlined"
@@ -36,7 +40,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
               shrink: true,
             }} />
         </FormControl>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="alumno"
             label="Alumno"
             variant="outlined"
@@ -45,7 +49,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
               shrink: true,
             }} />
         </FormControl>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="plan"
             label="Plan"
             variant="outlined"
@@ -54,7 +58,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
               shrink: true,
             }} />
         </FormControl>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="fecha_inicio"
             label="Fecha Inicio"
             type="date"
@@ -63,7 +67,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
               shrink: true,
             }} />
         </FormControl>
-        <FormControl fullWidth>
+        <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="fecha_fin"
             label="Fecha Fin"
             type="date"
