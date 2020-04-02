@@ -25,7 +25,7 @@ class Login extends Component {
     };
     axios(options).then(res => {
       localStorage.setItem('jwt', res.data.access);
-      this.props.history.push('/estadisticas');
+      this.props.history.push('/');
     });
   }
 

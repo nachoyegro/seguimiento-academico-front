@@ -36,8 +36,9 @@ class EstadisticasCarreraPage extends Estadisticas {
           fullWidth
           variant="contained"
           color="primary">
-          Calcular Estadisticas
-              </Button>
+          <h4 className="texto-boton">Ver</h4>
+
+        </Button>
       </form>
     )
 
