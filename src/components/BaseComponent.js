@@ -1,6 +1,7 @@
 import React from 'react';
 import { Get } from 'react-axios';
 import AuthenticatedComponent from './AuthenticatedComponent'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class BaseComponent extends AuthenticatedComponent {
 
@@ -13,7 +14,7 @@ class BaseComponent extends AuthenticatedComponent {
                             return (<div></div>)
                         }
                         else if (isLoading) {
-                            return (<div>Loading...</div>)
+                            return (<div className="center"><CircularProgress /></div>)
                         }
                         else if (response !== null) {
                             return (<div>{this.renderContainer(response.data)}</div>)
