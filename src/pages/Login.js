@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import axios from 'axios';
 import qs from 'qs';
-import BaseContainer from '../containers/BaseContainer';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import BasePage from './BasePage';
 
-class Login extends Component {
+class Login extends BasePage {
 
   state = {
     username: "",
@@ -29,17 +29,17 @@ class Login extends Component {
     });
   }
 
-  render() {
+  renderPage() {
     return (
-      <BaseContainer>
-        <form onSubmit={e => this.submit(e)}>
-          <legend>Login</legend>
-          <FormControl fullWidth>
+      <div className="form-estadisticas center">
+        <form  onSubmit={e => this.submit(e)}>
+          <p className="bienvenido espaciado-abajo">Login</p>
+          <FormControl className="form-estadisticas-input" fullWidth>
             <TextField id="username" label="Usuario"
               variant="outlined"
               onChange={e => this.setState({ username: e.target.value })} />
           </FormControl>
-          <FormControl fullWidth>
+          <FormControl className="form-estadisticas-input" fullWidth>
             <TextField id="password" label="Contraseña" type="password"
               variant="outlined"
               onChange={e => this.setState({ password: e.target.value })} />
@@ -52,7 +52,7 @@ class Login extends Component {
             Ingresar
           </Button>
         </form>
-      </BaseContainer >
+        </div>
     )
   }
 }

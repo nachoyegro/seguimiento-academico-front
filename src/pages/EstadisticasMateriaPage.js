@@ -18,13 +18,13 @@ class EstadisticasMateriaPage extends Estadisticas {
         materia: '',
         fecha_inicio: '',
         fecha_fin: '',
-        data_set: false
+        submitted: false
     }
 
     submit = e => {
         e.preventDefault();
         const { carreras, materia, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-        this.setState({ carreras: carreras.value, materia: materia.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+        this.setState({ submitted: true, carreras: carreras.value, materia: materia.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
     }
 
     renderForm = () => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import GraficoRadar from '../components/GraficoRadar';
-import Tabla from '../components/Tabla';
 import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
@@ -19,13 +18,13 @@ class EstadisticasAlumnoPage extends Estadisticas {
     plan: '',
     fecha_inicio: '',
     fecha_fin: '',
-    data_set: false
+    submitted: false,
   }
 
   submit = e => {
     e.preventDefault();
     const { carrera, alumno, plan, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-    this.setState({ carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+    this.setState({ submitted: true, carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
   }
 
   renderForm = () => {
@@ -95,7 +94,6 @@ class EstadisticasAlumnoPage extends Estadisticas {
           url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
           url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
-        <Tabla titulo={'Datos varios'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/datosvarios`}></Tabla>
       </>
     )
   }

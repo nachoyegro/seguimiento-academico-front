@@ -3,6 +3,12 @@ import BasePage from './BasePage';
 
 class Estadisticas extends BasePage {
 
+    renderEstadisticasSiSubmit = () => {
+        if(this.state.submitted) {
+            return ( this.renderEstadisticas() );
+        }
+    }
+
     renderPage = () => {
         return (
             <div>
@@ -10,7 +16,7 @@ class Estadisticas extends BasePage {
                 <div className="form-estadisticas center">
                     {this.renderForm()}
                 </div>
-                {this.renderEstadisticas()}
+                {this.renderEstadisticasSiSubmit()}
             </div>
         )
     }
