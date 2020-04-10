@@ -15,13 +15,13 @@ class EstadisticasCarreraPage extends Estadisticas {
 
   state = {
     carrera: '',
-    data_set: false
+    submitted: false,
   }
 
   submit = e => {
     e.preventDefault();
     const { carrera } = e.currentTarget.elements;
-    this.setState({ carrera: carrera.value });
+    this.setState({ carrera: carrera.value, submitted: true });
   }
 
   renderForm = () => {

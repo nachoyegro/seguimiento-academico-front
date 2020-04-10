@@ -19,13 +19,13 @@ class EstadisticasAlumnoPage extends Estadisticas {
     plan: '',
     fecha_inicio: '',
     fecha_fin: '',
-    data_set: false
+    submitted: false,
   }
 
   submit = e => {
     e.preventDefault();
     const { carrera, alumno, plan, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-    this.setState({ carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+    this.setState({ submitted: true, carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
   }
 
   renderForm = () => {
