@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import BaseContainer from '../containers/BaseContainer';
+import React from "react";
+import BasePage from '../pages/BasePage';
+import Button from '@material-ui/core/Button';
 
 
-class Logout extends Component {
+class Logout extends BasePage {
 
   logout = e => {
     localStorage.removeItem('jwt');
@@ -13,17 +14,15 @@ class Logout extends Component {
     this.props.history.push('/');
   }
 
-  render() {
+  renderPage() {
     return (
-      <BaseContainer>
-        <fieldset>
+        <fieldset className="espaciado-arriba">
           <legend>¿Está seguro que desea salir?</legend>
-          <p>
-            <button onClick={e => this.logout(e)}>Si</button>
-            <button onClick={e => this.cancel(e)}>No</button>
+          <p className="center">
+            <Button className="separado" variant="contained" onClick={e => this.logout(e)}>Si</Button>
+            <Button className="separado" variant="contained" onClick={e => this.cancel(e)}>No</Button>
           </p>
         </fieldset>
-      </BaseContainer>
     )
   }
 }

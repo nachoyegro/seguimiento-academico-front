@@ -188,3 +188,12 @@
   height: 300px;
   margin-bottom: 2rem;
 }
+
+.center {
+  text-align: center;
+}
+
+.separado {
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+}
