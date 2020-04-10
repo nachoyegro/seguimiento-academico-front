@@ -32,6 +32,7 @@ class EstadisticasCarreraPage extends Estadisticas {
             label="Carrera"
             variant="outlined"
             placeholder="Codigo de carrera"
+            required={true}
             InputLabelProps={{
               shrink: true,
             }} />
