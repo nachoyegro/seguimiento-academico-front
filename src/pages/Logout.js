@@ -10,7 +10,7 @@ class Logout extends Component {
   }
 
   cancel = e => {
-    this.props.history.push('/estadisticas');
+    this.props.history.push('/');
   }
 
   render() {

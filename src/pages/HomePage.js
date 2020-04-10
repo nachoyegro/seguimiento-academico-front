@@ -1,8 +1,5 @@
 import React from 'react';
 import BasePage from './BasePage';
-import Widget from '../components/Widget';
-import { withStyles } from '@material-ui/core/styles';
-import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import GrainIcon from '@material-ui/icons/Grain';
@@ -10,25 +7,9 @@ import PersonIcon from '@material-ui/icons/Person';
 import GroupIcon from '@material-ui/icons/Group';
 import pink from '@material-ui/core/colors/pink';
 
-const useStyles = theme => ({
-    carrot: {
-        color: "#fff",
-        backgroundColor: "#e67e22",
-    },
-    violet: {
-        color: "#fff",
-        backgroundColor: "#9b59b6"
-    },
-    icon: {
-        fontSize: 50,
-        marginLeft: '-10px'
-    },
-})
-
 class HomePage extends BasePage {
 
     renderPage() {
-        const { classes, nombre } = this.props;
         return (
             <div>
                 <p className="bienvenido espaciado-arriba">Bienvenido al módulo de estadísticas de seguimiento académico</p>
@@ -67,4 +48,4 @@ class HomePage extends BasePage {
     }
 }
 
-export default withStyles(useStyles)(HomePage);
+export default HomePage;
