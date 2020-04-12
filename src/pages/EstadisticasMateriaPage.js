@@ -35,6 +35,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                         label="Carreras"
                         variant="outlined"
                         placeholder="Codigos de Carreras"
+                        required={true}
                         InputLabelProps={{
                             shrink: true,
                         }} />
@@ -44,6 +45,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                         label="Materia"
                         variant="outlined"
                         placeholder="Codigo de materia"
+                        required={true}
                         InputLabelProps={{
                             shrink: true,
                         }} />

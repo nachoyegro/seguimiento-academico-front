@@ -35,6 +35,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
             label="Carrera"
             variant="outlined"
             placeholder="Codigo de carrera"
+            required={true}
             InputLabelProps={{
               shrink: true,
             }} />
@@ -44,6 +45,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
             label="Alumno"
             variant="outlined"
             placeholder="Legajo de alumno"
+            required={true}
             InputLabelProps={{
               shrink: true,
             }} />
@@ -53,6 +55,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
             label="Plan"
             variant="outlined"
             placeholder="Plan"
+            required={true}
             InputLabelProps={{
               shrink: true,
             }} />

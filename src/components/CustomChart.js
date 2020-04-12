@@ -10,7 +10,7 @@ class CustomChart extends BaseComponent {
 
     renderContainer(data) {
         return (
-            <div className="chart">
+            <div className="custom-chart">
                 <hr></hr>
                 <h1 className="bienvenido-descripcion">{this.props.titulo}</h1>
                 <ResponsiveContainer>
