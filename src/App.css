@@ -183,9 +183,17 @@
   margin-bottom: 10px !important;
 }
 
-.chart {
+.custom-chart {
   width: '100%';
+  margin-bottom: 2rem;
+}
+
+.custom-chart > .chart {
   height: 300px;
+}
+
+.tabla {
+  width: '100%';
   margin-bottom: 2rem;
 }
 
@@ -196,4 +204,8 @@
 .separado {
   margin-left: 10px !important;
   margin-right: 10px !important;
+}
+
+.MuiTableCell-root {
+  padding: 1px !important;
 }

@@ -57,6 +57,7 @@ class EstadisticasCarreraPage extends Estadisticas {
         <GraficoDeArea titulo={'Cantidad de ingresos por semestre'}
           url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/alumnos`} />
         <Tabla titulo={'Alumnos por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`}/>
+        <Tabla titulo={'Ingresantes por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-ingresantes`}/>
       </>
     )
   }

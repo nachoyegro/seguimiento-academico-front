@@ -33,7 +33,7 @@ class Tabla extends CustomChart {
     renderChart(data) {
         var rows = this.transformData(data);
         return (
-            <Table aria-label="simple table">
+            <Table aria-label="simple table" className="tabla">
                 <TableBody>
                 {rows.map(row => (
                     <TableRow key={row[0]}>
