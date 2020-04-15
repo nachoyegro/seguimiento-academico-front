@@ -11,7 +11,7 @@ class AuthenticatedComponent extends Component {
 
   render() {
     return (<AxiosProvider instance={axiosInstance}>
-      <div>{this.renderComponent()}</div>
+      {this.renderComponent()}
     </AxiosProvider>
     )
   }

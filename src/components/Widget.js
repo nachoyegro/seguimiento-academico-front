@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomChart from './CustomChart.js';
+import BaseComponent from './BaseComponent.js'
 import { withStyles } from '@material-ui/core/styles';
 
 import Card from '@material-ui/core/Card';
@@ -17,24 +17,26 @@ const useStyles = theme => ({
   }
 });
 
-class Widget extends CustomChart {
+class Widget extends BaseComponent {
 
-  renderChart(data) {
+  renderContainer(data) {
     const { classes } = this.props;
     return (
-      <Card className={this.props.color} variant="outlined">
-        <CardContent>
-          <div className={classes.center}>
-            {this.props.children}
-            <Typography className={classes.data} variant="h4" component="h2">
-              {data.valor}
+      <div className="widget">
+        <Card variant="outlined">
+          <CardContent>
+            <div className={classes.center}>
+              {this.props.children}
+              <Typography className={classes.data} variant="h4" component="h2">
+                {data.valor}
+              </Typography>
+            </div>
+            <Typography variant="body2" component="p">
+              {data.nombre}
             </Typography>
-          </div>
-          <Typography variant="body2" component="p">
-            {data.nombre}
-          </Typography>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      </div>
     )
   }
 

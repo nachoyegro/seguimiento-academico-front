@@ -63,14 +63,6 @@
   margin-right: 0;
   margin-top: 0;
 }
-.columns:not(:last-child) {
-  margin-bottom: .75rem;
-}
-.columns {
-  margin-left: -.75rem;
-  margin-right: -.75rem;
-  margin-top: -.75rem;
-}
 .columns {
   margin-left: -.75rem;
   margin-right: -.75rem;
@@ -183,29 +175,57 @@
   margin-bottom: 10px !important;
 }
 
+.content {
+  width: 80%;
+}
+
+.estadisticas {
+  display: grid;
+  grid-template-columns: 300px 300px;
+}
+
 .custom-chart {
-  width: '100%';
+  /*
+  width: 50%;
   margin-bottom: 2rem;
+  float: left;
+  margin-top: 2rem;
+  */
 }
 
 .custom-chart > .chart {
-  height: 300px;
+  /*
+  max-height: 300px;
+  */
 }
 
 .tabla {
+  /*
   width: '100%';
   margin-bottom: 2rem;
+  */
 }
 
 .center {
   text-align: center;
+  margin: 0 auto;
 }
 
 .separado {
+  /*
   margin-left: 10px !important;
   margin-right: 10px !important;
+  */
 }
 
 .MuiTableCell-root {
   padding: 1px !important;
+}
+
+.widget {
+  /*
+  width: 30%;
+  float: right;
+  margin-top: 2rem;
+  */
 }

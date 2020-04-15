@@ -7,7 +7,6 @@ class BaseComponent extends AuthenticatedComponent {
 
     renderComponent() {
         return (
-            <div>
                 <Get url={this.props.url} params={this.props.params}>
                     {(error, response, isLoading, makeRequest, axios) => {
                         if (error) {
@@ -17,12 +16,11 @@ class BaseComponent extends AuthenticatedComponent {
                             return (<div className="center"><CircularProgress /></div>)
                         }
                         else if (response !== null) {
-                            return (<div>{this.renderContainer(response.data)}</div>)
+                            return (<>{this.renderContainer(response.data)}</>)
                         }
                         return (<div>Default message before request is made.</div>)
                     }}
                 </Get>
-            </div>
         )
     }
 
