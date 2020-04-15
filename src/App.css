@@ -180,8 +180,9 @@
 }
 
 .estadisticas {
-  display: grid;
-  grid-template-columns: 300px 300px;
+  display:grid;
+  grid-gap: 20px; /* Espacio entre los elementos */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Tamaño de las columnas */
 }
 
 .custom-chart {
@@ -211,21 +212,33 @@
   margin: 0 auto;
 }
 
-.separado {
-  /*
-  margin-left: 10px !important;
-  margin-right: 10px !important;
-  */
-}
-
 .MuiTableCell-root {
   padding: 1px !important;
 }
 
+.widgetItem {
+  grid-column: span 2;
+}
+
 .widget {
   /*
-  width: 30%;
-  float: right;
-  margin-top: 2rem;
+  --color: #000;
+  background-color: var(--color) !important;
   */
+}
+
+.widget-data {
+  --color: aqua;
+  color: var(--color);
+  float: right;
+  width: 100%;
+}
+
+.widget-desc {
+  float:right;
+  width: 100%;
+}
+
+.item {
+  grid-column: span 3;
 }

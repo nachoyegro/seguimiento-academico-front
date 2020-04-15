@@ -93,10 +93,14 @@ class EstadisticasAlumnoPage extends Estadisticas {
   renderEstadisticas = () => {
     return (
       <>
-        <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
-          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
-        <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
-          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        <div className="item">
+          <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        </div>
+        <div className="item">
+          <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        </div>
       </>
     )
   }
