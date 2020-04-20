@@ -1,9 +1,14 @@
 import React from 'react';
 import GraficoRadar from '../components/GraficoRadar';
+import GraficoDeLineas from '../components/GraficoDeLineas';
+import Tabla from '../components/Tabla';
 import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import {
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+} from 'recharts';
 
 class EstadisticasAlumnoPage extends Estadisticas {
 
@@ -90,13 +95,26 @@ class EstadisticasAlumnoPage extends Estadisticas {
 
   }
 
+
   renderEstadisticas = () => {
+
     return (
       <>
-        <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
-          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
-        <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
-          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        <div className="item">
+          <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        </div>
+        <div className="item">
+          <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        </div>
+        <div className="item">
+          <Tabla titulo={'Notas del alumno'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}/>
+        </div>
+        <div className="item">
+          <GraficoDeLineas titulo={'Desempeño del alumno'}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/scores?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
+        </div>
       </>
     )
   }

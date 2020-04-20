@@ -11,12 +11,14 @@ class Estadisticas extends BasePage {
 
     renderPage = () => {
         return (
-            <div>
-                <p className="bienvenido">{this.titulo}</p>
+            <div className="content">
                 <div className="form-estadisticas center">
+                    <p className="bienvenido espaciado-abajo">{this.titulo}</p>
                     {this.renderForm()}
                 </div>
-                {this.renderEstadisticasSiSubmit()}
+                <div className="estadisticas center">
+                    {this.renderEstadisticasSiSubmit()}
+                </div>
             </div>
         )
     }

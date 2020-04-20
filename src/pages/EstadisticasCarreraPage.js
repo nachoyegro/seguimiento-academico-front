@@ -1,6 +1,7 @@
 import React from 'react';
 import GraficoDeArea from '../components/GraficoDeArea';
 import Tabla from '../components/Tabla';
+import Widget from '../components/Widget';
 import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
@@ -54,10 +55,26 @@ class EstadisticasCarreraPage extends Estadisticas {
   renderEstadisticas = () => {
     return (
       <>
+        <div className="widgetItem">
+          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cursantes-actual`}>Alumnos</Widget>
+        </div>
+        <div className="widgetItem">
+          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/ingresantes-actual`}>Alumnos</Widget>
+        </div>
+        <div className="widgetItem">
+          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/graduados-total`}>Alumnos</Widget>
+        </div>
+        <div className="item">
         <GraficoDeArea titulo={'Cantidad de ingresos por semestre'}
           url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/alumnos`} />
+        </div>
+        <div className="item">
         <Tabla titulo={'Alumnos por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`}/>
+        </div>
+        <div className="item">
         <Tabla titulo={'Ingresantes por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-ingresantes`}/>
+        </div>
+        
       </>
     )
   }
