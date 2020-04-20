@@ -6,7 +6,7 @@ class GraficoDeBarras extends CustomChart {
 
   renderChart(data) {
     return <div className="chart">
-              <BarChart data={data}>
+              <BarChart width={730} height={250} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="Materia" />
                 <YAxis />
