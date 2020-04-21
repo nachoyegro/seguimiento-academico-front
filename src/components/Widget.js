@@ -1,6 +1,5 @@
 import React from 'react';
 import BaseComponent from './BaseComponent.js'
-import { withStyles } from '@material-ui/core/styles';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 class Widget extends BaseComponent {
 
   renderContainer(data) {
-    const { classes } = this.props;
     return (
       <div className="widget">
         <Card variant="outlined">
