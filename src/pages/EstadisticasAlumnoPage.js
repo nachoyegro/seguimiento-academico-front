@@ -2,13 +2,11 @@ import React from 'react';
 import GraficoRadar from '../components/GraficoRadar';
 import GraficoDeLineas from '../components/GraficoDeLineas';
 import Tabla from '../components/Tabla';
+import Widget from '../components/Widget';
 import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
-import {
-  Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
-} from 'recharts';
 
 class EstadisticasAlumnoPage extends Estadisticas {
 
@@ -100,6 +98,10 @@ class EstadisticasAlumnoPage extends Estadisticas {
 
     return (
       <>
+
+        <div className="widgetItem">
+          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}>Alumnos</Widget>
+        </div>
         <div className="item">
           <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />

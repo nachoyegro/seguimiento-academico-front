@@ -87,6 +87,9 @@ class EstadisticasMateriaPage extends Estadisticas {
               <div className="item">
                 <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`} />
               </div>
+              <div className="item">
+                <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`} />
+              </div>
             </>
         )
     }
