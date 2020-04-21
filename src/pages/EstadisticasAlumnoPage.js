@@ -100,7 +100,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
       <>
 
         <div className="widgetItem">
-          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}`}>Alumnos</Widget>
+          <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}>Alumnos</Widget>
         </div>
         <div className="item">
           <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
