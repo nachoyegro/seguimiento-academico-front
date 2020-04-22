@@ -1,5 +1,6 @@
 import React from 'react';
 import GraficoDeBarras from '../components/GraficoDeBarras';
+import GraficoDeDispersion from '../components/GraficoDeDispersion';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
@@ -90,6 +91,19 @@ class EstadisticasMateriaPage extends Estadisticas {
               <div className="item">
                 <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`} />
               </div>
+                <div className="item">
+                <GraficoDeDispersion 
+                    titulo='Dispersión de notas con respecto al promedio'
+                    unitX=""
+                    unitY=""
+                    dataX="Promedio"
+                    dataY="Nota"
+                    nombreX="Promedio"
+                    nombreY="Nota"
+                    url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`}>
+                    
+                </GraficoDeDispersion>
+                </div>
             </>
         )
     }

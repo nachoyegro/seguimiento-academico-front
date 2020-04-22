@@ -68,13 +68,13 @@ class EstadisticasCarreraPage extends Estadisticas {
         <div className="item">
           <GraficoDeDispersion 
             titulo='Dispersión de alumnos'
-            unitX="%"
+            unitX=""
             unitY=""
-            dataX="Avance"
+            dataX="Promedio"
             dataY="Score"
-            nombreX="Avance"
+            nombreX="Promedio"
             nombreY="Score"
-            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-avance`}>
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-promedio`}>
             
           </GraficoDeDispersion>
         </div>
