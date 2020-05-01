@@ -86,10 +86,10 @@ class EstadisticasMateriaPage extends Estadisticas {
         return (
             <>
               <div className="item">
-                <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`} />
+                <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`} />
               </div>
               <div className="item">
-                <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`} />
+                <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`} />
               </div>
                 <div className="item">
                 <GraficoDeDispersion 
@@ -100,7 +100,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                     dataY="Nota"
                     nombreX="Promedio"
                     nombreY="Nota"
-                    url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carreras=${this.state.carreras}`}>
+                    url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`}>
                     
                 </GraficoDeDispersion>
                 </div>

@@ -74,7 +74,7 @@ class EstadisticasCarreraPage extends Estadisticas {
             dataY="Score"
             nombreX="Promedio"
             nombreY="Score"
-            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-promedio`}>
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-promedio?dias=365`}>
             
           </GraficoDeDispersion>
         </div>

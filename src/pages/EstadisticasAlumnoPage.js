@@ -7,6 +7,10 @@ import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import { getCarreras } from '../helpers/jwt';
 
 class EstadisticasAlumnoPage extends Estadisticas {
 
@@ -27,22 +31,32 @@ class EstadisticasAlumnoPage extends Estadisticas {
   submit = e => {
     e.preventDefault();
     const { carrera, alumno, plan, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-    this.setState({ submitted: true, carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+    this.setState({ submitted: true, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
   }
 
   renderForm = () => {
+    var carreras = getCarreras();
     return (
       <form onSubmit={e => this.submit(e)}>
-        <FormControl className="form-estadisticas-input" fullWidth>
-          <TextField id="carrera"
-            label="Carrera"
-            variant="outlined"
-            placeholder="Codigo de carrera"
-            required={true}
-            InputLabelProps={{
-              shrink: true,
-            }} />
-        </FormControl>
+        <FormControl variant="outlined" className="form-estadisticas-input" fullWidth>
+        <InputLabel id="carrera">Carrera</InputLabel>
+        <Select
+          labelId="carrera"
+          id="carrera"
+          value={this.state.carrera}
+          onChange={ e => this.setState({carrera: e.target.value})}
+          label="Carrera"
+        >
+
+          <MenuItem value="">
+            <em>--</em>
+          </MenuItem>
+
+          {carreras.map(row => (
+            <MenuItem value={row[0]}>{row[1]}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
         <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="alumno"
             label="Alumno"
@@ -95,7 +109,6 @@ class EstadisticasAlumnoPage extends Estadisticas {
 
 
   renderEstadisticas = () => {
-
     return (
       <>
 

@@ -3,6 +3,10 @@ import BasePage from './BasePage';
 
 class Estadisticas extends BasePage {
 
+    constructor(props) {
+        super(props);
+      }
+
     renderEstadisticasSiSubmit = () => {
         if(this.state.submitted) {
             return ( this.renderEstadisticas() );
