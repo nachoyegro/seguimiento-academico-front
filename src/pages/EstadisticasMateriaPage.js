@@ -5,6 +5,10 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
 import Estadisticas from './Estadisticas';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import { getCarreras } from '../helpers/jwt';
 
 class EstadisticasMateriaPage extends Estadisticas {
 
@@ -15,7 +19,7 @@ class EstadisticasMateriaPage extends Estadisticas {
 
 
     state = {
-        carreras: '',
+        carrera: '',
         materia: '',
         fecha_inicio: '',
         fecha_fin: '',
@@ -24,23 +28,33 @@ class EstadisticasMateriaPage extends Estadisticas {
 
     submit = e => {
         e.preventDefault();
-        const { carreras, materia, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-        this.setState({ submitted: true, carreras: carreras.value, materia: materia.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+        const { materia, fecha_inicio, fecha_fin } = e.currentTarget.elements;
+        this.setState({ submitted: true, materia: materia.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
     }
 
     renderForm = () => {
+        var carreras = getCarreras();
         return (
-            <form onSubmit={e => this.submit(e)}>
-                <FormControl className="form-estadisticas-input" fullWidth>
-                    <TextField id="carreras"
-                        label="Carreras"
-                        variant="outlined"
-                        placeholder="Codigos de Carreras"
-                        required={true}
-                        InputLabelProps={{
-                            shrink: true,
-                        }} />
-                </FormControl>
+          <form onSubmit={e => this.submit(e)}>
+            <FormControl variant="outlined" className="form-estadisticas-input" fullWidth>
+            <InputLabel id="carrera">Carrera</InputLabel>
+            <Select
+              labelId="carrera"
+              id="carrera"
+              value={this.state.carrera}
+              onChange={ e => this.setState({carrera: e.target.value})}
+              label="Carrera"
+            >
+    
+              <MenuItem value="">
+                <em>--</em>
+              </MenuItem>
+    
+              {carreras.map(row => (
+                <MenuItem value={row[0]}>{row[1]}</MenuItem>
+              ))}
+            </Select>
+          </FormControl>
                 <FormControl className="form-estadisticas-input" fullWidth>
                     <TextField id="materia"
                         label="Materia"
@@ -86,10 +100,10 @@ class EstadisticasMateriaPage extends Estadisticas {
         return (
             <>
               <div className="item">
-                <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`} />
+                <GraficoDeBarras titulo={'Estadisticas basicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
               </div>
               <div className="item">
-                <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`} />
+                <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
               </div>
                 <div className="item">
                 <GraficoDeDispersion 
@@ -100,7 +114,7 @@ class EstadisticasMateriaPage extends Estadisticas {
                     dataY="Nota"
                     nombreX="Promedio"
                     nombreY="Nota"
-                    url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carreras}`}>
+                    url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`}>
                     
                 </GraficoDeDispersion>
                 </div>

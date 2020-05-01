@@ -7,7 +7,6 @@ class GraficoDeBarras extends CustomChart {
   renderChart(data) {
 
     const colors = ["#8feb34", "#0984e3", "#ff7675", "#ffc658"];
-    console.log(data);
     return <div className="chart">
               <BarChart width={730} height={250} data={data}>
                 <CartesianGrid strokeDasharray="3 3" />
