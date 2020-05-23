@@ -41,12 +41,6 @@
 .columns.is-gapless:not(:last-child) {
   margin-bottom: 1.5rem;
 }
-.columns.is-gapless:not(:last-child) {
-  margin-bottom: 1.5rem;
-}
-.columns:not(.is-desktop) {
-  display: flex;
-}
 .columns.is-gapless {
   margin-left: 0;
   margin-right: 0;
@@ -55,19 +49,25 @@
 .columns:not(:last-child) {
   margin-bottom: .75rem;
 }
-.columns:not(.is-desktop) {
-  display: flex;
-}
 .columns.is-gapless {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
 }
 .columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   margin-left: -.75rem;
   margin-right: -.75rem;
   margin-top: -.75rem;
 }
+
+@media screen and (min-width: 601px) {
+  .columns {
+    display: flex;
+  }
+}
+
 *, ::after, ::before {
   box-sizing: border-box;
   margin: 0;
@@ -91,18 +91,11 @@
   display: flex;
 }
 .column {
-  display: block;
   flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
   padding: .75rem;
-}
-.column {
-  display: block;
-  flex-basis: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding: .75rem;
+  grid-column: span 3;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -126,7 +119,6 @@
   position: relative;
   text-align: center;
   transition: all .5s ease-out;
-  max-width: 750px;
   background-color: #fff;
   box-shadow: 1px 0 0 0 #dae4e9,0 1px 0 0 #dae4e9,1px 1px 0 0 #dae4e9,inset 1px 0 0 0 #dae4e9,inset 0 1px 0 0 #dae4e9;
 }
@@ -143,10 +135,57 @@
   font-size: 1.2rem !important;
 }
 
-.bienvenido {
-  font-size: 3rem !important;
-  text-align: center;
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .bienvenido {
+    font-size: 3rem !important;
+    text-align: center;
+  }
 }
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .bienvenido {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .bienvenido-descripcion {
+    font-size: 1.8rem !important;
+    text-align: center;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .bienvenido-descripcion {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+}
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  .header-title {
+    font-size: 1rem !important;
+    position: absolute;
+    top: 20%;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  .header-title {
+    font-size: 0.5rem !important;
+    position: absolute;
+    top: 30%;
+  }
+}
+
+
 
 .espaciado-arriba {
   margin-top: 3rem;
@@ -156,10 +195,6 @@
   margin-bottom: 3rem;
 }
 
-.bienvenido-descripcion {
-  font-size: 1.8rem !important;
-  text-align: center;
-}
 
 .form-estadisticas {
   width: 100%;
@@ -182,22 +217,19 @@
 .estadisticas {
   display:grid;
   grid-gap: 20px; /* Espacio entre los elementos */
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* Tamaño de las columnas */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.item {
+  grid-column: span 3;
 }
 
 .custom-chart {
-  /*
-  width: 50%;
+  width: 100%;
+  height: 300px;
   margin-bottom: 2rem;
   float: left;
   margin-top: 2rem;
-  */
-}
-
-.custom-chart > .chart {
-  /*
-  max-height: 300px;
-  */
 }
 
 .tabla {
@@ -237,8 +269,4 @@
 .widget-desc {
   float:right;
   width: 100%;
-}
-
-.item {
-  grid-column: span 3;
 }

@@ -5,8 +5,7 @@ import CustomChart from './CustomChart.js';
 class GraficoDeLineas extends CustomChart {
 
   renderChart(data) {
-    return <div className="chart">
-            <LineChart width={730} height={250} data={data}
+    return <LineChart width="100%" height="100%" data={data}
                   margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
               <Line type="monotone" dataKey="valor" stroke="#8884d8" />
               <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -14,7 +13,6 @@ class GraficoDeLineas extends CustomChart {
               <YAxis />
               <Tooltip />
             </LineChart>
-          </div>;
   }
 }
 

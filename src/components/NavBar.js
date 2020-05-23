@@ -22,8 +22,8 @@ class NavBar extends Component {
                             container
                             spacing={5}>
                             <Grid item>
-                              <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                                <h1>Visualización de datos</h1>
+                              <Link to="/" className="header-title" style={{ textDecoration: 'none', color: 'inherit' }}>
+                                <h1>SEGUIMIENTO ACADÉMICO</h1>
                               </Link>
                             </Grid>
                             <Grid item>
