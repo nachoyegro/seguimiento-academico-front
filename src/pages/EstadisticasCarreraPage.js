@@ -95,10 +95,18 @@ class EstadisticasCarreraPage extends Estadisticas {
           url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/alumnos`} />
         </div>
         <div className="item">
-          <Tabla titulo={'Alumnos por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`}/>
+          <Tabla titulo={'Alumnos por cohorte'} 
+                  header={[{ title: 'Cohorte', field: 'Cohorte' },
+                        { title: 'Cursantes', field: 'Cursantes' },
+                        { title: 'Ingresantes', field: 'Ingresantes'},
+                        { title: 'Graduados', field: 'Graduados'}]}
+                  url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`}/>
         </div>
         <div className="item">
-          <Tabla titulo={'Ingresantes por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-ingresantes`}/>
+          <Tabla titulo={'Ingresantes por cohorte'} 
+                  header={[{ title: 'Cohorte', field: 'Cohorte' },
+                        { title: 'Ingresantes', field: 'Ingresantes' }]}
+                url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-ingresantes`}/>
         </div>
         
       </>

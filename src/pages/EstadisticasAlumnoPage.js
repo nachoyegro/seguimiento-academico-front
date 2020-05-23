@@ -124,7 +124,12 @@ class EstadisticasAlumnoPage extends Estadisticas {
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <Tabla titulo={'Notas del alumno'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}/>
+          <Tabla titulo={'Notas del alumno'} 
+                  header={[{ title: 'Fecha', field: 'Fecha' },
+                        { title: 'Materia', field: 'Materia' },
+                        { title: 'Plan', field: 'Plan'},
+                        { title: 'Nota', field: 'Nota'}]}
+                  url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}/>
         </div>
         <div className="item">
           <GraficoDeLineas titulo={'Desempeño del alumno'}
