@@ -100,7 +100,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
           fullWidth
           variant="contained"
           color="primary">
-          Calcular Estadisticas
+          Ver
               </Button>
       </form>
     )
@@ -116,11 +116,11 @@ class EstadisticasAlumnoPage extends Estadisticas {
           <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}>Alumnos</Widget>
         </div>
         <div className="item">
-          <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
+          <GraficoRadar titulo={'Porcentajes de aprobación por área'}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
+          <GraficoRadar titulo={'Porcentajes de aprobación por núcleo'}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">

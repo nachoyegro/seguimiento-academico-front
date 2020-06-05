@@ -3,26 +3,17 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import Link from '@material-ui/core/Link';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import Footer from '../components/Footer';
 import axios from 'axios';
 import qs from 'qs';
 import { useHistory } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core/styles';
 import logo from '../logo.png'; 
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      <Link color="inherit" href="https://unq.edu.ar/">
-        Universidad Nacional de Quilmes
-      </Link>{' '}
-    </Typography>
-  );
-}
+import theme from '../styles/Theme';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -73,57 +64,57 @@ export default function SignIn(initialState) {
 
 
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-        <img className={classes.logo} src={logo}></img>
-        <Typography component="h1" variant="h5">
-         Ingresar
-        </Typography>
-        <form className={classes.form} onSubmit={e => submit(e)}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
-            onChange={e => setEmail(e.target.value)} 
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            name="password"
-            label="Password"
-            type="password"
-            id="password"
-            autoComplete="current-password"
-            onChange={e => setPassword(e.target.value)}
-          />
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
 
-          >
-            Ingresar
-          </Button>
-        </form>
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <div className={classes.paper}>
+          <img className={classes.logo} src={logo}></img>
+          <Typography component="h1" variant="h5">
+          Ingresar
+          </Typography>
+          <form className={classes.form} onSubmit={e => submit(e)}>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email"
+              name="email"
+              autoComplete="email"
+              onChange={e => setEmail(e.target.value)} 
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Contraseña"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+              onChange={e => setPassword(e.target.value)}
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              color="primary">
+              Ingresar
+            </Button>
+          </form>
 
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-      </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
-    </Container>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+        </div>
+        <Footer />
+      </Container>
+    </ThemeProvider>
   );
 }

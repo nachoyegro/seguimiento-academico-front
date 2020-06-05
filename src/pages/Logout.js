@@ -16,13 +16,13 @@ class Logout extends BasePage {
 
   renderPage() {
     return (
-        <fieldset className="espaciado-arriba">
-          <legend>¿Está seguro que desea salir?</legend>
-          <p className="center">
-            <Button className="separado" variant="contained" onClick={e => this.logout(e)}>Si</Button>
-            <Button className="separado" variant="contained" onClick={e => this.cancel(e)}>No</Button>
-          </p>
-        </fieldset>
+      <fieldset className="espaciado-arriba">
+        <legend>¿Está seguro que desea salir?</legend>
+        <p className="center">
+          <Button className="separado" variant="contained" onClick={e => this.logout(e)}>Si</Button>
+          <Button className="separado" variant="contained" onClick={e => this.cancel(e)}>No</Button>
+        </p>
+      </fieldset>
     )
   }
 }
