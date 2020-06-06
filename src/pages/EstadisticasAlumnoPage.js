@@ -39,24 +39,24 @@ class EstadisticasAlumnoPage extends Estadisticas {
     return (
       <form onSubmit={e => this.submit(e)}>
         <FormControl variant="outlined" className="form-estadisticas-input" fullWidth>
-        <InputLabel id="carrera">Carrera</InputLabel>
-        <Select
-          labelId="carrera"
-          id="carrera"
-          value={this.state.carrera}
-          onChange={ e => this.setState({carrera: e.target.value})}
-          label="Carrera"
-        >
+          <InputLabel id="carrera">Carrera</InputLabel>
+          <Select
+            labelId="carrera"
+            id="carrera"
+            value={this.state.carrera}
+            onChange={e => this.setState({ carrera: e.target.value })}
+            label="Carrera"
+          >
 
-          <MenuItem value="">
-            <em>--</em>
-          </MenuItem>
+            <MenuItem value="">
+              <em>--</em>
+            </MenuItem>
 
-          {carreras.map(row => (
-            <MenuItem value={row[0]}>{row[1]}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+            {carreras.map(row => (
+              <MenuItem value={row[0]}>{row[1]}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="alumno"
             label="Alumno"
@@ -124,15 +124,17 @@ class EstadisticasAlumnoPage extends Estadisticas {
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <Tabla titulo={'Notas del alumno'} 
-                  header={[{ title: 'Fecha', field: 'Fecha' },
-                        { title: 'Materia', field: 'Materia' },
-                        { title: 'Plan', field: 'Plan'},
-                        { title: 'Nota', field: 'Nota'}]}
-                  url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}/>
+          <Tabla titulo={'Notas del alumno'}
+            header={[{ title: 'Fecha', field: 'Fecha' },
+            { title: 'Materia', field: 'Materia' },
+            { title: 'Plan', field: 'Plan' },
+            { title: 'Nota', field: 'Nota' }]}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <GraficoDeLineas titulo={'Desempeño del alumno'}
+          <GraficoDeLineas titulo="Desempeño del alumno"
+            nombreX="Fecha"
+            nombreY="Puntaje"
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/scores?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
       </>
