@@ -128,7 +128,10 @@ class EstadisticasAlumnoPage extends Estadisticas {
             header={[{ title: 'Fecha', field: 'Fecha' },
             { title: 'Materia', field: 'Materia' },
             { title: 'Plan', field: 'Plan' },
-            { title: 'Nota', field: 'Nota' }]}
+            { title: 'Nota', field: 'Nota' },
+            { title: 'Resultado', field: 'Resultado' },
+            { title: 'Acta Examen', field: 'Acta Examen' },
+            { title: 'Acta Promocion', field: 'Acta Promocion' }]}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
