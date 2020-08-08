@@ -20,7 +20,7 @@ class Estadisticas extends BasePage {
                     <p className="bienvenido espaciado-abajo">{this.titulo}</p>
                     {this.renderForm()}
                 </div>
-                <div className="estadisticas center">
+                <div className="estadisticas">
                     {this.renderEstadisticasSiSubmit()}
                 </div>
             </div>

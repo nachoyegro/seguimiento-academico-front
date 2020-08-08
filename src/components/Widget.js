@@ -13,7 +13,7 @@ class Widget extends BaseComponent {
         <Card variant="outlined">
           <CardContent>
             <div>
-              <Typography className="widget-data" variant="h4" component="h2">
+              <Typography className="widget-data" variant="h4" component="h2" color="primary">
                 {data.valor}
               </Typography>
             </div>
