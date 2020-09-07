@@ -7,6 +7,10 @@ import Estadisticas from './Estadisticas';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+import { getCarreras } from '../helpers/jwt';
 
 class EstadisticasAlumnoPage extends Estadisticas {
 
@@ -27,21 +31,31 @@ class EstadisticasAlumnoPage extends Estadisticas {
   submit = e => {
     e.preventDefault();
     const { carrera, alumno, plan, fecha_inicio, fecha_fin } = e.currentTarget.elements;
-    this.setState({ submitted: true, carrera: carrera.value, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
+    this.setState({ submitted: true, alumno: alumno.value, plan: plan.value, fecha_inicio: fecha_inicio.value, fecha_fin: fecha_fin.value });
   }
 
   renderForm = () => {
+    var carreras = getCarreras();
     return (
       <form onSubmit={e => this.submit(e)}>
-        <FormControl className="form-estadisticas-input" fullWidth>
-          <TextField id="carrera"
+        <FormControl variant="outlined" className="form-estadisticas-input" fullWidth>
+          <InputLabel id="carrera">Carrera</InputLabel>
+          <Select
+            labelId="carrera"
+            id="carrera"
+            value={this.state.carrera}
+            onChange={e => this.setState({ carrera: e.target.value })}
             label="Carrera"
-            variant="outlined"
-            placeholder="Codigo de carrera"
-            required={true}
-            InputLabelProps={{
-              shrink: true,
-            }} />
+          >
+
+            <MenuItem value="">
+              <em>--</em>
+            </MenuItem>
+
+            {carreras.map(row => (
+              <MenuItem value={row[0]}>{row[1]}</MenuItem>
+            ))}
+          </Select>
         </FormControl>
         <FormControl className="form-estadisticas-input" fullWidth>
           <TextField id="alumno"
@@ -86,7 +100,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
           fullWidth
           variant="contained"
           color="primary">
-          Calcular Estadisticas
+          Ver
               </Button>
       </form>
     )
@@ -95,7 +109,6 @@ class EstadisticasAlumnoPage extends Estadisticas {
 
 
   renderEstadisticas = () => {
-
     return (
       <>
 
@@ -103,18 +116,28 @@ class EstadisticasAlumnoPage extends Estadisticas {
           <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}>Alumnos</Widget>
         </div>
         <div className="item">
-          <GraficoRadar titulo={'Porcentajes de aprobacion por area'}
+          <GraficoRadar titulo={'Porcentajes de aprobación por área'}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <GraficoRadar titulo={'Porcentajes de aprobacion por nucleo'}
+          <GraficoRadar titulo={'Porcentajes de aprobación por núcleo'}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <Tabla titulo={'Notas del alumno'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}/>
+          <Tabla titulo={'Notas del alumno'}
+            header={[{ title: 'Fecha', field: 'Fecha' },
+            { title: 'Materia', field: 'Materia' },
+            { title: 'Plan', field: 'Plan' },
+            { title: 'Nota', field: 'Nota' },
+            { title: 'Resultado', field: 'Resultado' },
+            { title: 'Acta Examen', field: 'Acta Examen' },
+            { title: 'Acta Promocion', field: 'Acta Promocion' }]}
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <GraficoDeLineas titulo={'Desempeño del alumno'}
+          <GraficoDeLineas titulo="Desempeño del alumno"
+            nombreX="Fecha"
+            nombreY="Puntaje"
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/scores?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
       </>

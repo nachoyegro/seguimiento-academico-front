@@ -1,19 +1,19 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { isAuthenticated } from '../helpers/auth';
+import { isLoggedIn } from '../helpers/auth';
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => {
     return (
-        <Route {...rest} 
-                render={ props => {
-                    if(isAuthenticated()){
-                        return <Component {...props}/>
-                    }
-                    else{
-                        return (<Redirect to={{pathname: "/login"}}/>);
-                    }
-                }}
+        <Route {...rest}
+            render={props => {
+                if (isLoggedIn()) {
+                    return <Component {...props} />
+                }
+                else {
+                    return (<Redirect to={{ pathname: "/login" }} />);
+                }
+            }}
         />
-                    
+
     )
 }

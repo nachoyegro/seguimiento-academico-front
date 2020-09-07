@@ -12,8 +12,8 @@ class HomePage extends BasePage {
     renderPage() {
         return (
             <div>
-                <p className="bienvenido espaciado-arriba">Bienvenido al módulo de estadísticas de seguimiento académico</p>
-                <p className="bienvenido-descripcion espaciado-abajo">Seleccione el tipo de análisis que desea visualizar</p>
+                <p className="bienvenido espaciado-arriba">Bienvenido al sistema de seguimiento académico</p>
+                <p className="bienvenido-descripcion espaciado-abajo">Seleccione la categoría que desea visualizar</p>
                 <div className="columns is-gapless">
                     <div className="column">
                         <Link to="/estadisticas-carrera" style={{ textDecoration: 'none', color: 'inherit' }}>
