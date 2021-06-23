@@ -6,7 +6,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bash -c "npm build && npm start"
     volumes:
       - '.:/usr/src/app'
       - '/usr/src/app/node_modules'
