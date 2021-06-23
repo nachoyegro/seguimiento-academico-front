@@ -2,6 +2,7 @@ version: '3'
 
 services:
   alumnos-front:
+    image: nachoyegro/seguimiento-academico-front:v1.1
     container_name: seguimiento-academico-front
     build:
       context: .
