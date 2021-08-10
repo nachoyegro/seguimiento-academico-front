@@ -18,7 +18,7 @@ class Widget extends BaseComponent {
               </Typography>
             </div>
             <div>
-            <Typography className="widget-desc" variant="body2" component="p">
+            <Typography className="widget-desc" variant="button" component="p">
               {data.nombre}
             </Typography>
             </div>

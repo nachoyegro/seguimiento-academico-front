@@ -101,13 +101,18 @@ class EstadisticasMateriaPage extends Estadisticas {
     return (
       <>
         <div className="item">
-          <GraficoDeBarras titulo={'Estadísticas básicas de materia'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
+          <GraficoDeBarras titulo={'Estadísticas básicas de materia'} 
+          description="Análisis de cuántos estudiantes aprobaron, desaprobaron, quedaron ausentes y cuántos faltan aprobarla dentro del período elegido."
+          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/basicos?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
         </div>
         <div className="item">
-          <GraficoDeBarras titulo={'Detalle de aprobación'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
+          <GraficoDeBarras titulo={'Detalle de aprobación'} 
+          description="Detalle de la forma en que aprobaron los estudiantes esta materia en el rango seleccionado."
+          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/detalle-aprobados?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`} />
         </div>
         <div className="item">
           <Tabla titulo={'Recursantes'}
+            description="Se analizan los recursantes y la cantidad de veces que la recursaron. Para este análisis se tiene en cuenta el semestre de la fecha fin. Es decir, si se pide un análisis hasta la fecha 12/12/2019, se calcularán los recursantes de la materia pedida durante las inscripciones del segundo semestre del 2019."
             header={[{ title: 'Legajo', field: 'Legajo' },
             { title: 'Veces que recursa', field: 'Cantidad' }]}
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/recursantes?carrera=${this.state.carrera}&fecha=${this.state.fecha_fin}`} />
@@ -121,6 +126,7 @@ class EstadisticasMateriaPage extends Estadisticas {
             dataY="Nota"
             nombreX="Promedio"
             nombreY="Nota"
+            description="Análisis de la dispersión de notas dentro del período elegido. En el eje vertical se muestra el promedio general del alumno, mientras que en el eje horizontal se muestra la nota obtenida."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/materias/${this.state.materia}/dispersion-notas?inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}&carrera=${this.state.carrera}`}>
 
           </GraficoDeDispersion>

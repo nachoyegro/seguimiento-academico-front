@@ -16,7 +16,7 @@ class EstadisticasAlumnoPage extends Estadisticas {
 
   constructor(props) {
     super(props);
-    this.titulo = 'Análisis por alumno'
+    this.titulo = 'Análisis por estudiante'
   }
 
   state = {
@@ -111,20 +111,23 @@ class EstadisticasAlumnoPage extends Estadisticas {
   renderEstadisticas = () => {
     return (
       <>
-
+        <div className="item">
         <div className="widgetItem">
           <Widget color='#000' url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentaje-carrera?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`}>Alumnos</Widget>
         </div>
+        </div>
         <div className="item">
           <GraficoRadar titulo={'Porcentajes de aprobación por área'}
+            description="Se analizan los porcentajes de aprobación que tiene el estudiante con respecto a las diferentes áreas de la carrera y el plan que se está analizando, dentro del período elegido."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-areas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
           <GraficoRadar titulo={'Porcentajes de aprobación por núcleo'}
+            description="Se analizan los porcentajes de aprobación que tiene el estudiante con respecto a los diferentes núcleos de la carrera y el plan que se está analizando, dentro del período elegido."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/porcentajes-nucleos?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <Tabla titulo={'Notas del alumno'}
+          <Tabla titulo={'Notas del estudiante'}
             header={[{ title: 'Fecha', field: 'Fecha' },
             { title: 'Materia', field: 'Materia' },
             { title: 'Plan', field: 'Plan' },
@@ -132,12 +135,14 @@ class EstadisticasAlumnoPage extends Estadisticas {
             { title: 'Resultado', field: 'Resultado' },
             { title: 'Acta Examen', field: 'Acta Examen' },
             { title: 'Acta Promocion', field: 'Acta Promocion' }]}
+            description="Se muestran las diferentes notas que obtuvo el estudiante."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/notas?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
         <div className="item">
-          <GraficoDeLineas titulo="Desempeño del alumno"
+          <GraficoDeLineas titulo="Desempeño del estudiante"
             nombreX="Fecha"
             nombreY="Puntaje"
+            description="Se muestra el promedio del estudiante por cada semestre de cursada. Este promedio no es preciso ya que las materias con nota Aprobado son consideradas como 7 y las Desaprobado son consideradas como 3."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/alumnos/${this.state.alumno}/scores?carrera=${this.state.carrera}&plan=${this.state.plan}&inicio=${this.state.fecha_inicio}&fin=${this.state.fecha_fin}`} />
         </div>
       </>
