@@ -1,5 +1,5 @@
 # Visualización de datos de Seguimiento Académico
-[![Build Status](https://travis-ci.org/nachoyegro/seguimiento-academico-front.svg?branch=master)](https://travis-ci.org/nachoyegro/seguimiento-academico-front)
+[![Build Status](https://travis-ci.com/nachoyegro/seguimiento-academico-front.svg?branch=master)](https://travis-ci.com/nachoyegro/seguimiento-academico-front)
 
 ## Resumen
 
