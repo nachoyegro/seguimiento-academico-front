@@ -15,8 +15,8 @@ class BaseComponent extends AuthenticatedComponent {
                         else if (isLoading) {
                             return (<div className="center"><CircularProgress /></div>)
                         }
-                        else if (response !== null) {
-                            return (<>{this.renderContainer(response.data)}</>)
+                        else if (response !== null) { 
+                            return (<>{this.renderContainer(response.data, this.props.description)}</>)
                         }
                         return (<div>Default message before request is made.</div>)
                     }}

@@ -42,16 +42,45 @@ class Tabla extends BaseComponent {
     
 
     renderContainer(data){
-        return (
-            <div style={{ maxWidth: "100%" }}>
-                <MaterialTable 
-                    icons={tableIcons}
-                    columns={this.props.header}
-                    data={data}
-                    title={this.props.titulo}
-                    >
-                </MaterialTable>
-            </div>);
+        return (<>
+                <hr></hr>
+                <div className="tabla" style={{maxWidth: "100%"}}>
+                    <MaterialTable 
+                        icons={tableIcons}
+                        columns={this.props.header}
+                        data={data}
+                        title={this.props.titulo}
+                        options={{
+                            headerStyle: {
+                              backgroundColor: '#29ABE2',
+                              color: '#FFF'
+                            }
+                          }}
+                          localization={{
+                            pagination: {
+                                labelDisplayedRows: '{from}-{to} de {count}',
+                                labelRowsSelect: 'filas'
+                            },
+                            toolbar: {
+                                nRowsSelected: '{0} fila(s) seleccionadas',
+                                searchPlaceholder: 'Buscar',
+                                searchTooltip: 'Buscar'
+                            },
+                            header: {
+                                actions: 'Acciones'
+                            },
+                            body: {
+                                emptyDataSourceMessage: 'No se encontraron resultados',
+                                filterRow: {
+                                    filterTooltip: 'Filtrar'
+                                }
+                            }
+                        }}
+                        >
+                    </MaterialTable>
+                </div>
+                <p className="table-description">{this.props.description}</p>
+            </>);
         
     }
 

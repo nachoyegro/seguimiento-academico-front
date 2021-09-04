@@ -86,16 +86,14 @@ class EstadisticasCarreraPage extends Estadisticas {
             dataY="Score"
             nombreX="Promedio"
             nombreY="Score"
-            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-promedio?dias=365`}>
-
+            description="Se muestra un gráfico con la dispersión de los estudiantes con respecto a su promedio general y su desempeño el último año. Uno de los ejes tiene en cuenta el promedio y el otro su score el último año. De esta manera, se puede observar de forma gráfica los estudiantes que se desempeñaron por encima de su historial y cuáles no."
+            url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/dispersion-score-promedio?dias=365`}> 
           </GraficoDeDispersion>
         </div>
         <div className="item">
           <GraficoDeArea titulo={'Cantidad de ingresos por semestre'}
+            description="Se muestra la cantidad de ingresos semestrales histórico de la carrera. De esta forma, se puede observar en qué momento hubo picos de ingresos y en qué momentos hubo menos."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/alumnos`} />
-        </div>
-        <div className="item">
-          <Tabla titulo={'Alumnos por cohorte'} url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`} />
         </div>
         <div className="item">
           <Tabla titulo={'Alumnos por cohorte'}
@@ -103,13 +101,26 @@ class EstadisticasCarreraPage extends Estadisticas {
             { title: 'Cursantes', field: 'Cursantes' },
             { title: 'Ingresantes', field: 'Ingresantes' },
             { title: 'Graduados', field: 'Graduados' }]}
+            description="Se obtiene un listado de inscriptos, cursantes, graduados y postulantes por cohorte."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-alumnos`} />
         </div>
         <div className="item">
           <Tabla titulo={'Ingresantes por cohorte'}
             header={[{ title: 'Cohorte', field: 'Cohorte' },
             { title: 'Ingresantes', field: 'Ingresantes' }]}
+            description="Dada una carrera, se obtiene la cantidad de ingresantes separadas por año."
             url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/cantidades-ingresantes`} />
+        </div>
+        <div className="item">
+          <Tabla titulo={'Scores de materias en base a dificultad/dependencia'} 
+          header={[{ title: 'Materia', field: 'Materia', width: '70%' }, 
+                  { title: 'Promedio de Aprobación', field: 'Promedio de Aprobación', width: '5%'  }, 
+                  { title: 'Obligatorias dependientes', field: 'Obligatorias dependientes', width: '5%'  },
+                  { title: 'Score', field: 'Score', width: '5%'  } ]}
+          description="Se calcula un score en base al promedio de aprobación de los estudiantes y la cantidad de materias obligatorias que dependen de ésta. Este score determina qué materia puede llegar a demorar la carrera de un estudiante.
+
+          Score = (1 − IndiceAprobacion) ∗ CantidadObligatoriasDependientes"
+          url={`${process.env.REACT_APP_ESTADISTICAS_URL}/carreras/${this.state.carrera}/materias-traba?plan=2019`} />
         </div>
 
       </>

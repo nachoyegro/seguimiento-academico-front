@@ -224,19 +224,29 @@
   grid-column: span 3;
 }
 
+.chart-description {
+  margin-top: 20px;
+  margin-left: 50px;
+  color: grey;
+}
+
+.table-description {
+  margin-top: 20px;
+  color: grey;
+}
+
 .custom-chart {
   width: 100%;
-  height: 300px;
-  margin-bottom: 2rem;
+  height: 400px;
+  margin-bottom: 8rem;
   float: left;
   margin-top: 2rem;
 }
 
 .tabla {
-  /*
   width: '100%';
   margin-bottom: 2rem;
-  */
+  margin-top: 2rem;
 }
 
 .center {
@@ -252,6 +262,7 @@
   grid-column: span 2;
 }
 
+
 .widget {
   /*
   --color: #000;
@@ -262,12 +273,12 @@
 .widget-data {
   --color: aqua;
   color: var(--color);
-  float: right;
+  text-align: center;
   width: 100%;
 }
 
 .widget-desc {
-  float:right;
+  text-align: center;
   width: 100%;
 }
 

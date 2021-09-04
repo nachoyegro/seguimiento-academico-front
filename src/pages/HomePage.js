@@ -20,7 +20,7 @@ class HomePage extends BasePage {
                             <div className="service-box">
                                 <GrainIcon style={{ fontSize: 100, color: pink[500] }}></GrainIcon>
                                 <h2 className="titulo-recuadro">Análisis por Carrera</h2>
-                                <p className="texto-recuadro">Se puede ver el crecimiento anual de inscriptos, qué materias son traba, estado de la carrera, etc.</p>
+                                <p className="texto-recuadro">Crecimiento anual de inscriptos, estado de la carrera, cantidad de estudiantes, etc.</p>
                             </div>
                         </Link>
                     </div>
@@ -29,7 +29,7 @@ class HomePage extends BasePage {
                             <div className="service-box">
                                 <GroupIcon style={{ fontSize: 100, color: pink[500] }}></GroupIcon>
                                 <h2 className="titulo-recuadro">Análisis por Materia</h2>
-                                <p className="texto-recuadro">Cantidad de aprobados/desaprobados/ausentes, recursantes, detalle de aprobados, etc</p>
+                                <p className="texto-recuadro">Cantidad de aprobados/desaprobados/ausentes, recursantes, detalle de aprobados, etc.</p>
                             </div>
                         </Link>
                     </div>
@@ -37,8 +37,8 @@ class HomePage extends BasePage {
                         <Link to="/estadisticas-alumno" style={{ textDecoration: 'none', color: 'inherit' }}>
                             <div className="service-box">
                                 <PersonIcon style={{ fontSize: 100, color: pink[500] }}></PersonIcon>
-                                <h2 className="titulo-recuadro">Análisis por Alumno</h2>
-                                <p className="texto-recuadro">Se puede ver el porcentaje de aprobación por áreas, por núcleos, cantidad de créditos, etc</p>
+                                <h2 className="titulo-recuadro">Análisis por Estudiante</h2>
+                                <p className="texto-recuadro">Porcentaje de aprobación por áreas, aprobación por núcleos, cantidad de créditos, etc</p>
                             </div>
                         </Link>
                     </div>
