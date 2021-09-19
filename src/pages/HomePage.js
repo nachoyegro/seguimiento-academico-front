@@ -29,7 +29,7 @@ class HomePage extends BasePage {
                             <div className="service-box">
                                 <GroupIcon style={{ fontSize: 100, color: pink[500] }}></GroupIcon>
                                 <h2 className="titulo-recuadro">Análisis por Materia</h2>
-                                <p className="texto-recuadro">Cantidad de aprobados/desaprobados/ausentes, recursantes, detalle de aprobados, etc.</p>
+                                <p className="texto-recuadro">Cantidad de aprobados/desaprobados/ausentes, recursantes, detalle de aprobados</p>
                             </div>
                         </Link>
                     </div>
